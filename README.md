@@ -2,9 +2,9 @@
 
 this is a demo that tells you how to use yaf framework
 
-## yaf框架与smarty的结合
+## smarty的引入
 
-* 首先要在ext-yaf.ini配置里打开yaf.use_spl_autoload=1开关
+* 首先要在`ext-yaf.ini`配置里打开`yaf.use_spl_autoload=1`开关
 
   > 开启的情况下, Yaf在加载不成功的情况下, 会继续让PHP的自动加载函数加载, 从性能考虑, 除非特殊情况, 否则保持这个选项关闭，虽是这样，但为了让其自动加载自定义类，就要打开该设置
   
