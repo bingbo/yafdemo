@@ -18,6 +18,7 @@ class IndexController extends Yaf_Controller_Abstract {
 
 		//2. fetch model
 		$model = new SampleModel();
+        $res = UserService::sayHi();
 
 		//3. assign
 		$this->getView()->assign("content", $model->selectSample());
