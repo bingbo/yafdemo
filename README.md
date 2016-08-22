@@ -61,3 +61,43 @@ this is a demo that tells you how to use yaf framework
 
     }
 ```
+
+## 目录结构
+
+![a](https://github.com/bingbo/blog/blob/master/images/yaf/layout.png)
+
+## Nginx配置
+
+```nginx
+#vhost/yafdemo.conf
+server {
+    listen       8008;
+    server_name  localhost;
+
+    charset utf-8;
+
+    root    html/yafdemo;
+    index index.html index.htm index.php;
+
+    location /public{
+    
+    }
+    
+    location /{
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+        rewrite ^/(.*)  /index.php/$1 break;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+
+    location ~ /\.ht {
+        deny  all;
+    }
+}
+```
