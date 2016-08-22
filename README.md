@@ -2,7 +2,7 @@
 
 this is a demo that tells you how to use yaf framework
 
-## smarty的引入
+## Smarty的引入
 
 * 首先要在`ext-yaf.ini`配置里打开`yaf.use_spl_autoload=1`开关
 
@@ -18,7 +18,6 @@ this is a demo that tells you how to use yaf framework
 
     class Components_Views_Smarty implements Yaf_View_Interface{
 
-        protected $script_path;
         protected $smarty;
 
         public function __construct(){
@@ -51,14 +50,7 @@ this is a demo that tells you how to use yaf framework
             $this->smarty->assign($key, $value);
         }
 
-        public function setScriptPath($view_directory){
-            $this->script_path = $view_directory;
-        }
-
-        public function getScriptPath(){
-            return $this->script_path;
-        }
-
+        ........
     }
 ```
 

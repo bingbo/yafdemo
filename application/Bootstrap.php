@@ -42,4 +42,8 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
         $view = new Components_Views_Smarty();
         $dispatcher->setView($view);
 	}
-}
+
+    public function _initDefaultName(Yaf_Dispatcher $dispatcher){
+        $dispatcher->setDefaultModule("Index")->setDefaultController("Index")->setDefaultAction("index");
+    }
+}   

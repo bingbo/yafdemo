@@ -7,6 +7,6 @@
 class UserController extends Yaf_Controller_Abstract {
 
     public $actions = array(
-        'index' => 'actions/user/Index.php',
+        'user_index' => 'actions/user/Index.php',
     );
 }
