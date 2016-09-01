@@ -2,6 +2,34 @@
 
 this is a demo that tells you how to use yaf framework
 
+## 命名空间的使用
+
+
+* 首先要在`ext-yaf.ini`配置里打开`yaf.use_namespace=1`开关
+
+* 其次在bootstrap.php文件中以_initAutoLoad()的方法使用加载自定义的autoload函数，如
+
+    ```php
+    /**
+     * 添加自定义类加载器
+     */
+    public function _initAutoLoad(){
+        require_once('front_autoload.php');
+        spl_autoload_register('custom_autoload');
+    }
+
+    #front_autoload.php
+    function custom_autoload($class){
+        $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+        $file = APPLICATION_APP_PATH . DIRECTORY_SEPARATOR . $class . '.php';
+        if(file_exists($file)){
+            Yaf\Loader::import($file);
+        }
+    }
+    ```
+
+> 注：类加载的时候先会去用自定义加载器去查找加载，其次再用yaf的加载器去加载，如果需要yaf加载处理的则要用完全限定名称，即\xxx等,注意访问任意全局类、函数或常量，都可以使用完全限定名称，例如 \strlen() 或 \Exception 或 \INI_ALL。
+
 ## Smarty的引入
 
 * 首先要在`ext-yaf.ini`配置里打开`yaf.use_spl_autoload=1`开关

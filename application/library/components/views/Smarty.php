@@ -1,9 +1,9 @@
 <?php
 
-Yaf_Loader::import(dirname(__FILE__) . '/smarty-3.1.30/libs/Autoloader.php');
+Yaf\Loader::import(dirname(__FILE__) . '/smarty-3.1.30/libs/Autoloader.php');
 Smarty_Autoloader::register();
 
-class Components_Views_Smarty implements Yaf_View_Interface{
+class Components_Views_Smarty implements Yaf\View_Interface{
 
     protected $script_path;
     protected $smarty;
