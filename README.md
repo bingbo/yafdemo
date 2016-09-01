@@ -28,6 +28,8 @@ this is a demo that tells you how to use yaf framework
     }
     ```
 
+* 最后就可以定义扩展自己的services及dao等相应的类或目录
+
 > 注：类加载的时候先会去用自定义加载器去查找加载，其次再用yaf的加载器去加载，如果需要yaf加载处理的则要用完全限定名称，即\xxx等,注意访问任意全局类、函数或常量，都可以使用完全限定名称，例如 \strlen() 或 \Exception 或 \INI_ALL。
 
 ## Smarty的引入
